@@ -1,0 +1,41 @@
+[project]
+name = "qwen3-sft"
+version = "1.0.0"
+description = "Supervised Fine-Tuning and Evaluation for Qwen3 Models on Math Reasoning"
+readme = "README.md"
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "accelerate>=1.5.2",
+    "datasets>=3.0.0",
+    "jupyter>=1.1.1",
+    "math-verify[antlr4-13-2]>=0.7.0",
+    "matplotlib>=3.8.0",
+    "pylatexenc==2.10",
+    "notebook>=7.4.2",
+    "torch",
+    "tqdm>=4.67.1",
+    "transformers>=4.50.0",
+    "typer>=0.15.4",
+    "wandb>=0.19.8",
+    "xopen>=2.0.2",
+]
+
+[project.optional-dependencies]
+cuda = [
+    "flash-attn==2.7.4.post1",
+]
+vllm = [
+    "vllm>=0.8.4",
+]
+
+[tool.setuptools.packages.find]
+include = ["cs336_alignment"]
+
+[tool.uv]
+package = true
+no-build-isolation-package = ["flash-attn"]
+
+[[tool.uv.dependency-metadata]]
+name = "flash-attn"
+version = "2.7.4.post1"
+requires-dist = ["torch", "einops", "setuptools"]
