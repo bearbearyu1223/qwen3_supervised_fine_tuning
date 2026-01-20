@@ -19,7 +19,7 @@ cd qwen3_supervised_fine_tuning
 # Install with uv (recommended)
 uv sync
 
-# For CUDA support (NVIDIA GPUs, optional)
+# Install dependecies with CUDA support for flash-attn (optional)
 uv sync --extra cuda
 ```
 
