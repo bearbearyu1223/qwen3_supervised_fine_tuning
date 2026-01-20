@@ -304,8 +304,7 @@ def main() -> None:
     logger.info(
         "  uv run python scripts/run_math_eval.py \\\n"
         "      --model-name-or-path %s \\\n"
-        "      --output-path outputs/sft_eval_results.jsonl \\\n"
-        "      --backend transformers",
+        "      --output-path outputs/sft_eval_results.jsonl \\\n",
         final_model_path,
     )
 
